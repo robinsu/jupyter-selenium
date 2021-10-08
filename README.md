@@ -18,3 +18,10 @@ docker run -d --name ${container_name} \
     -e GRANT_SUDO=yes --user root \
     ${image_name} 
 ```
+
+## push to DockerHub
+```
+image_name="robinsu/jupyter-selenium:latest"
+## docker tag local-image:tagname new-repo:tagname
+docker push "$image_name"
+```
