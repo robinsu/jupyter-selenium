@@ -1,0 +1,15 @@
+version: '3'
+services:
+    web:
+        build:
+            context: .
+        image: itri-go/jupyter-selenium:latest
+        # container_name: notebook-rsu
+        #environment:
+        #    - discovery.type=single-node
+        volumes:
+            - ./work:/home/jovyan/work
+        ports:
+            - 8888:8888
+        restart: always
+        command: start-notebook.sh --NotebookApp.password='itri'
